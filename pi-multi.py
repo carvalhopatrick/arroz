@@ -7,10 +7,10 @@ SIZE = 21							# size of the palindromic prime to be searched
 BUFSIZE = 1024*500					# size (number of digits) of each worker buffer
 MAX_WORKERS = 11					# max number of concurrent workers
 MAX_PROCS = 200						# max number of processes at once in the worker pool
-START_IDX = 0						# min Pi digit index to search
-END_IDX = sys.maxsize				# max Pi digit index to search
-INPUT_FILE = './input/pi-1b.txt'		# path to input file with pi digits
-HAS_INTEGER = True						# True if input file has integer part ('3.')
+START_IDX = 16657748744					# min Pi digit index to search
+END_IDX = 18057748744			# max Pi digit index to search
+INPUT_FILE = 'D:/pi_dec_1t_04.txt'		# path to input file with pi digits
+HAS_INTEGER = False						# True if input file has integer part ('3.')
 
 # checks if number is prime (slow method, but adequate for this use case)
 def is_prime(list):
@@ -35,11 +35,11 @@ def search(buf, f_idx):
 
 	for i in range(n-SIZE):
 		if (is_palindrome(window)):
-			print('palindrome found at i = ' + str(i+f_idx))
+			print(f'palindrome found at i = {str(i+f_idx)} // {"".join(window)}', flush=True)
 
 			if (is_prime(window)):
 				print('!!! PRIME FOUND AT i = ' + str(i+f_idx))
-				print('!!! PRIME = ' + str(window))
+				print('!!! PRIME = ' + str(window), flush=True)
 				return (i+f_idx, window)
 
 		window.pop(0)
@@ -66,7 +66,7 @@ def main():
 			# add processes to pool until MAX_PROCS limit
 			while (len(procs) <= MAX_PROCS and buf != '' and f_idx <= END_IDX):
 				if (progress_counter >= 100*1000*1000): # prints every 100M digits, just to check progress
-					print(f'creating // f_idx = {f_idx} // procs = {len(procs)}')
+					print(f'creating // f_idx = {f_idx} // procs = {len(procs)}', flush=True)
 					progress_counter = 0
 				p = pool.submit(search, buf, f_idx)
 				procs.append(p)
@@ -110,4 +110,5 @@ if __name__ == '__main__':
 	last_idx = main()
 	print(f'searched {last_idx-START_IDX} digits in {(time.time()-start_time):.2f} seconds')
 	print(f'last safe index: {last_idx-BUFSIZE-SIZE-1}')
+	sys.stdout.flush()
 	
