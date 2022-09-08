@@ -44,8 +44,6 @@ def search(buf, f_idx):
 
 		window.pop(0)
 		window.insert(SIZE-1, buf[i+SIZE])
-		# last window will be checked in the next search call
-		# TODO: test if it really is the case
 	return False
 
 def main():
