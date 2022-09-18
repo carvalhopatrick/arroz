@@ -29,12 +29,13 @@ def extract_ycd(filename, file_number):
 	try:
 		start = int(file_number) * (100*10**9) + 1
 		end = (start - 1) + 100*10**9
-		txt_name = filename.replace('.ycd', '.txt.part')
+		txt_name = filename.replace('.ycd', '.txt')
 
 		cmd = ['digitviewer-convert', filename,
 					str(start), str(end), txt_name]
 		p = subprocess.run(cmd)
-		os.rename(f'{txt_name}', f'{txt_name.replace(".txt.part", ".txt")}')
+		# rename file to .pitxt so that controller can start the search in it
+		os.rename(f'{txt_name}', f'{txt_name.replace(".txt", ".pitxt")}')
 		return True
 	except:
 		log("ERROR: extract_ycd", file_number)
@@ -49,7 +50,13 @@ def main():
 			file_number = str(data['file_number'])
 
 			txt_list = glob.glob('./input/*.txt')
+			pitxt_list = glob.glob('./input/*.pitxt')
 			ycd_list = glob.glob('./input/*.ycd')
+
+			# no there's a txt that wasn't fully extracted
+			if (len(txt_list) > 0):
+				for file in txt_list:
+					os.remove(file)
 
 			# no ycd, download a new one
 			if (len(ycd_list) == 0):
@@ -63,15 +70,15 @@ def main():
 					raise Exception("ERROR: download_ycd")
 
 			# ycd downloaded, no pending txt, extract it
-			if (len(ycd_list) > 0 and len(txt_list) == 0):
+			if (len(ycd_list) > 0 and len(pitxt_list) == 0):
 				filename = ycd_list[0]
 				log(f"Starting extraction of {filename}\t{datetime.now()}", file_number)
 				start_time = time.time()
-				r = extract_ycd(f"./{filename}", file_number)
+				r = extract_ycd(f"{filename}", file_number)
 
 				if (r):
-                                       log(f"Extracted in {time.time() - start_time}s", file_number)
-                                       os.remove(f'./input/{filename}') 
+					log(f"Extracted in {time.time() - start_time}s", file_number)
+					os.remove(f'{filename}') 
 				else:
 					raise Exception("ERROR: extract_ycd")
 
