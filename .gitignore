@@ -1,3 +1,2 @@
-input/*
-cloud/input/*
-local/input/*
+*/input/*
+*/__pycache__/*

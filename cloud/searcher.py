@@ -1,48 +1,37 @@
-import time
-import math
-from concurrent import futures
-import sys
 import multiprocessing as mp
+import time
+from concurrent import futures
 from datetime import datetime
 
-MINSIZE = 22						# minimum size of the palindromic prime to be searched
-BUFSIZE = 50*10**6					# size (number of digits) of each worker Pi buffer
+MINSIZE = 17						# minimum size of the palindromic prime to be searched
+BUFSIZE = 100*10**6					# size (number of digits) of each worker Pi buffer
 OVERLAPING = 35						# size of overlaping between Pi buffers
-MAX_WORKERS = 10					# max ammount of concurrent workers
+MAX_WORKERS = mp.cpu_count()-1		# max ammount of concurrent workers
 MAX_PROCS = 2*MAX_WORKERS			# max ammount of prepared processes in pool (a high amount will waste RAM)
-START_IDX = 0				# min Pi digit index to search
-END_IDX = -1				# max Pi digit index to search (-1 to until end of file)
-INPUT_FILE = "D:/pi/pi_dec_1t_02.txt"				# path to input file with pi digits
 OUTPUT_FILE = "./logs/test.log"		# path to output log (with results)
-PAL_FILE = "./palindromes/palindromes.txt"	# path to palindromes file
-
-# add last digits from previous file to concatenate with first digits of current run (leave '' for empty)
-PREVIOUS_DIGITS = ''
+PAL_FILE = "./palindromes/palindromes.log"	# path to palindromes file
 
 class Searcher:
 	def __init__(self, pi, idx, file_number):
 		self.pi = pi
 		self.start_idx = idx
 		self.file_number = file_number
+
 		self.log(f"New searcher // st idx: {idx}")
 
-	def log(self, str, palindrome=False):
+	def log(self, string, pal=False):
+		number = str(self.file_number)
+		string = f"{number}:\t{string}"
+
+		# mutex to prevent multiple process access at the same time
 		with lock:
 			with open(OUTPUT_FILE, 'a+') as f:
-				f.write(self.file_number + ':\t' + str + '\n')
-			print(str, flush=True)
+				f.write(string + '\n')
 			# if log is about a palindrome
-			if (palindrome):
+			if (pal):
 				with open(PAL_FILE, 'a+') as fp:
-					fp.write(self.file_number + ':\t' + str + '\n')
-
-
-	# checks if number is prime (slow method, but adequate for this use case)
-	def is_prime(self, n):
-		for i in range(2, int(math.sqrt(n))+1):
-			if (n % i) == 0:
-				return False
-		return True
+					fp.write(string + '\n')
+			print(string, flush=True)
 
 	def is_palindrome(self, idx):
 		pi = self.pi
@@ -62,20 +51,14 @@ class Searcher:
 		else:
 			return False
 
-	# searches for palindromes and primes in a string full of pi digits
+	# searches for palindromes in a string full of pi digits
 	def search(self):
 		pi = self.pi
 
 		for idx in range(MINSIZE//2, len(pi)-1): # no need to check indexes less than the minimum size we are searching
 			pal = self.is_palindrome(idx)
 			if (pal):
-				self.log(f"palindrome! size: {len(pal)} // center idx: {self.start_idx + idx} // pal: {pal}")
-
-			# if (self.is_prime(int(''.join(pal)))):
-			# 	self.log(f'!!! PRIME PALINDROME FOUND! size: {len(pal)} // idx: {idx} // pal: {pal}')
-			# 	return (idx, pal)
-			# else:
-			# 	self.log(f"palindrome is not prime. idx: {idx}")
+				self.log(f"palindrome! size: {len(pal)} // center idx: {self.start_idx + idx} // pal: {pal}", True)
 
 		self.log(f"end searcher // st idx: {self.start_idx}")
 		return False
@@ -96,13 +79,13 @@ def get_last_digits(input_file):
 		a -= OVERLAPING
 		f.seek(a)
 		last_digits = f.read(OVERLAPING)
-
-		
-		return last_digits
+	return last_digits
 
 # previous = last digits from previous file
-def start(input_file, file_number, start_idx, end_idx, previous):
+def run(input_file, file_number, start_idx, end_idx, previous):
+	file_number = str(file_number)
 	start_time = time.time()
+	
 	# open local file with pi digits
 	with open(input_file, 'r') as f:
 		if (end_idx == -1):
@@ -145,8 +128,17 @@ def start(input_file, file_number, start_idx, end_idx, previous):
 	
 	last_digits = get_last_digits(input_file)
 	finish_time = time.time()
+
 	with open(OUTPUT_FILE, 'a+') as of:
-		of.write(f"{file_number}:\trun time: {finish_time} // system time: {datetime.now()}")
-		of.write(f"{file_number}:\tlast digits: {last_digits}")
+		string = f"{file_number}:\trun time: {finish_time} // system time: {datetime.now()}\n{file_number}:\tlast digits: {last_digits}"
+		of.write(string + '\n')
+		print(string)
 
 	return last_digits
+
+
+# if ran as standalone script = testing purposes
+if __name__ == '__main__':
+	last_digits = run(input_file='./input/pi-1b.txt', file_number=22,
+									start_idx=0, end_idx=-1, previous='9292992922992') 
+	print("!!!!!!!! last digits = " + last_digits)
