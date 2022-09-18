@@ -1,4 +1,4 @@
-with open('D:/pi/pi23.txt') as f:
+with open('D:/pi/pi26.txt') as f:
 	f.seek(0)
 	print("start: ", f.read(50))
 	a = f.seek(0, 2)

@@ -1,0 +1,63 @@
+ssh -i gcloud-sufle tiagovitor57@34.94.106.142
+
+ssh tiagovitor57@34.94.106.142
+
+ycruncher startei na pt 17
+
+====== PARTE 1 =====
+
+palindrome found at i = 14024981823
+palindrome found at i = 30316434187
+palindrome found at i = 42230176681
+palindrome found at i = 43751371452
+palindrome found at i = 60013316586
+palindrome found at i = 64850945819
+palindrome found at i = 64851776210
+palindrome found at i = 68598303091
+palindrome found at i = 76493992137
+palindrome found at i = 78938245259
+palindrome found at i = 79633648074
+palindrome found at i = 79633648074
+palindrome found at i = 80877652436
+palindrome found at i = 83804102855
+palindrome found at i = 84640045658
+palindrome found at i = 85775055018
+palindrome found at i = 94929771060
+
+No palindromic primes found :(
+searched 46611389002 digits in 4202.31 seconds
+last safe index: 99999999855
+
+last digits: 3654076006558004104105010201424602247211862300286149361782910791153444360729196656962037329712945953651519969484324283185077669067461469201912956
+
+======= PARTE 2 =====
+
+first digits: 6955281949768254737815
+
+
+palindrome found at i = 26075628935
+palindrome found at i = 34617133053
+palindrome found at i = 38408800706
+palindrome found at i = 38923798405
+palindrome found at i = 40672630234
+!!! PRIME FOUND AT i = 40672630234
+!!! PRIME = ['1', '5', '1', '9', '7', '8', '1', '4', '5', '6', '0', '6', '5', '4', '1', '8', '7', '9', '1', '5', '1']
+prime added (idx, result): (40672630234, ['1', '5', '1', '9', '7', '8', '1', '4', '5', '6', '0', '6', '5', '4', '1', '8', '7', '9', '1', '5', '1'])
+terminating pool...
+FINAL RESULT: i = 40672630234 // prime = 151978145606541879151
+searched 40751480484 digits in 5117.49 seconds
+last safe index: 40750968462
+
+
+======= PARTE 4 ======
+
+palindrome found at i = 576110992
+palindrome found at i = 16677267901
+palindrome found at i = 16753471467 // 658262569747965262856
+palindrome found at i = 16677267901 // 999915579464975519999    <---- PRIME!
+palindrome found at i = 25794864322
+palindrome found at i = 29962805779
+palindrome found at i = 47225745037
+
+continuar em 49623400625
+

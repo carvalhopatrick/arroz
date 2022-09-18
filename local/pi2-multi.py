@@ -5,17 +5,17 @@ import sys
 import multiprocessing as mp
 
 MINSIZE = 22						# minimum size of the palindromic prime to be searched
-BUFSIZE = 100*10**6					# size (number of digits) of each worker Pi buffer
-OVERLAPING = 28						# size of overlaping between Pi buffers
-MAX_WORKERS = 8					# max ammount of concurrent workers
+BUFSIZE = 50*10**6					# size (number of digits) of each worker Pi buffer
+OVERLAPING = 35						# size of overlaping between Pi buffers
+MAX_WORKERS = 10					# max ammount of concurrent workers
 MAX_PROCS = 2*MAX_WORKERS			# max ammount of prepared processes in pool (a high amount will waste RAM)
 START_IDX = 0				# min Pi digit index to search
-END_IDX = -1				# max Pi digit index to search (-1 to until end of file)
-INPUT_FILE = "D:/pi/pi33.txt"				# path to input file with pi digits
-OUTPUT_FILE = "./outputs/run33.log"		# path to output log (with results)
+END_IDX = 1*10**9				# max Pi digit index to search (-1 to until end of file)
+INPUT_FILE = "D:/pi/pi_dec_1t_02.txt"				# path to input file with pi digits
+OUTPUT_FILE = "./local/outputs/test.log"		# path to output log (with results)
 
 # add last digits from previous file to concatenate with first digits of current run (leave '' for empty)
-PREVIOUS_DIGITS = '637323825535594499244912302'
+PREVIOUS_DIGITS = ''
 
 class Searcher:
 	def __init__(self, pi, idx):
@@ -122,7 +122,7 @@ def main():
 				f.seek(f_idx)		# rewinds read pointer to not miss combinations in the next search
 				buf = f.read(BUFSIZE)
 
-		return f_idx
+		return f_limit
 
 def get_last_digits():
 	with open(INPUT_FILE) as f:

@@ -1,0 +1,135 @@
+New searcher // idx: 0
+New searcher // idx: 99999950
+New searcher // idx: 199999900
+New searcher // idx: 299999850
+New searcher // idx: 399999800
+New searcher // idx: 499999750
+New searcher // idx: 599999700
+New searcher // idx: 699999650
+New searcher // idx: 799999600
+New searcher // idx: 899999550
+New searcher // idx: 999999500
+New searcher // idx: 1099999450
+New searcher // idx: 1199999400
+New searcher // idx: 1299999350
+New searcher // idx: 1399999300
+New searcher // idx: 1499999250
+New searcher // idx: 1599999200
+New searcher // idx: 1699999150
+New searcher // idx: 1799999100
+New searcher // idx: 1899999050
+New searcher // idx: 1999999000
+New searcher // idx: 2099998950
+New searcher // idx: 2199998900
+New searcher // idx: 2299998850
+New searcher // idx: 2399998800
+New searcher // idx: 2499998750
+New searcher // idx: 2599998700
+New searcher // idx: 2699998650
+New searcher // idx: 2799998600
+New searcher // idx: 2899998550
+New searcher // idx: 2999998500
+New searcher // idx: 3099998450
+New searcher // idx: 3199998400
+New searcher // idx: 3299998350
+New searcher // idx: 3399998300
+New searcher // idx: 3499998250
+New searcher // idx: 3599998200
+New searcher // idx: 3699998150
+New searcher // idx: 3799998100
+New searcher // idx: 3899998050
+New searcher // idx: 3999998000
+New searcher // idx: 4099997950
+New searcher // idx: 4199997900
+New searcher // idx: 4299997850
+New searcher // idx: 4399997800
+New searcher // idx: 4499997750
+New searcher // idx: 4599997700
+New searcher // idx: 4699997650
+New searcher // idx: 4799997600
+New searcher // idx: 4899997550
+New searcher // idx: 4999997500
+New searcher // idx: 5099997450
+New searcher // idx: 5199997400
+New searcher // idx: 5299997350
+New searcher // idx: 5399997300
+New searcher // idx: 5499997250
+New searcher // idx: 5599997200
+New searcher // idx: 5699997150
+New searcher // idx: 5799997100
+New searcher // idx: 5899997050
+New searcher // idx: 5999997000
+New searcher // idx: 6099996950
+New searcher // idx: 6199996900
+New searcher // idx: 0
+New searcher // idx: 0
+New searcher // idx: 99999950
+New searcher // idx: 199999900
+New searcher // idx: 299999850
+New searcher // idx: 399999800
+New searcher // idx: 499999750
+New searcher // idx: 599999700
+New searcher // idx: 699999650
+New searcher // idx: 799999600
+New searcher // idx: 899999550
+New searcher // idx: 999999500
+New searcher // idx: 1099999450
+New searcher // idx: 1199999400
+New searcher // idx: 1299999350
+New searcher // idx: 1399999300
+New searcher // idx: 1499999250
+New searcher // idx: 1599999200
+New searcher // idx: 1699999150
+New searcher // idx: 1799999100
+New searcher // idx: 1899999050
+New searcher // idx: 1999999000
+New searcher // idx: 2099998950
+New searcher // idx: 2199998900
+New searcher // idx: 2299998850
+New searcher // idx: 2399998800
+New searcher // idx: 2499998750
+New searcher // idx: 2599998700
+New searcher // idx: 2699998650
+New searcher // idx: 26000000000
+palindrome found! size: 21 // center idx: 26075628945 // pal: 481907535777535709184
+New searcher // idx: 26099999950
+New searcher // idx: 26199999900
+New searcher // idx: 26299999850
+New searcher // idx: 26399999800
+New searcher // idx: 26499999750
+New searcher // idx: 34000000000
+New searcher // idx: 34099999950
+New searcher // idx: 34199999900
+New searcher // idx: 34299999850
+New searcher // idx: 34399999800
+New searcher // idx: 34499999750
+New searcher // idx: 34599999700
+palindrome found! size: 21 // center idx: 34617133063 // pal: 956906398797893609659
+New searcher // idx: 34699999650
+New searcher // idx: 38408800606
+palindrome found! size: 21 // center idx: 38408800716 // pal: 567188991525199881765
+New searcher // idx: 38923798405
+!!!! PALINDROME BREAKS CHUNK LIMIT! idx: 38923798415 // i: 11
+palindrome found! size: 21 // center idx: 38923798415 // pal: 393121574070475121393
+New searcher // idx: 38923798205
+palindrome found! size: 23 // center idx: 38923798415 // pal: 33931215740704751213933
+New searcher // idx: 40672630134
+palindrome found! size: 21 // center idx: 40672630244 // pal: 151978145606541879151
+New searcher // idx: 576110992
+!!!! PALINDROME BREAKS CHUNK LIMIT! idx: 576111002 // i: 11
+palindrome found! size: 21 // center idx: 576111002 // pal: 418109913393319901814
+New searcher // idx: 576110800
+palindrome found! size: 23 // center idx: 576111002 // pal: 24181099133933199018142
+New searcher // idx: 16677267201
+palindrome found! size: 21 // center idx: 16677267911 // pal: 999915579464975519999
+New searcher // idx: 16753471267
+palindrome found! size: 21 // center idx: 16753471477 // pal: 658262569747965262856
+New searcher // idx: 16677267201
+palindrome found! size: 21 // center idx: 16677267911 // pal: 999915579464975519999
+New searcher // idx: 25794864122
+palindrome found! size: 23 // center idx: 25794864332 // pal: 73345505247074250554337
+New searcher // idx: 25894864072
+New searcher // idx: 29962805279
+palindrome found! size: 21 // center idx: 29962805789 // pal: 769486715565517684967
+New searcher // idx: 47225744037
+palindrome found! size: 21 // center idx: 47225745047 // pal: 857538565606565835758

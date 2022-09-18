@@ -1,3 +1,3 @@
 input/*
-outputs/*
-ycruncher/*
+cloud/input/*
+local/input/*
