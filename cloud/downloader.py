@@ -29,11 +29,12 @@ def extract_ycd(filename, file_number):
 	try:
 		start = int(file_number) * (100*10**9) + 1
 		end = (start - 1) + 100*10**9
-		txt_name = filename.replace('.ycd', '.txt')
+		txt_name = filename.replace('.ycd', '.txt.part')
 
 		cmd = ['digitviewer-convert', filename,
 					str(start), str(end), txt_name]
 		p = subprocess.run(cmd)
+		os.rename(f'{txt_name}', f'{txt_name.replace(".txt.part", ".txt")}')
 		return True
 	except:
 		log("ERROR: extract_ycd", file_number)

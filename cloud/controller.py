@@ -35,7 +35,7 @@ def main():
 
 			file_number_bak = data['file_number']
 			last_digits_bak = data['last_digits']
-			file_number = file_number_bak + 1
+			file_number = file_number_bak
 			last_digits = last_digits_bak
 			input_file = txt_list[0]
 
@@ -55,7 +55,7 @@ def main():
 
 			# update json - last digits and new file_number
 			data['last_digits'] = last_digits
-			data['file_number'] = file_number
+			data['file_number'] = file_number+1
 			utils.json_write(data, utils.DATAFILE)
 			
 			# delete txt file
