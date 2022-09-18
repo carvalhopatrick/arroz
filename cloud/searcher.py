@@ -3,7 +3,7 @@ import time
 from concurrent import futures
 from datetime import datetime
 
-MINSIZE = 17						# minimum size of the palindromic prime to be searched
+MINSIZE = 21						# minimum size of the palindromic prime to be searched
 BUFSIZE = 100*10**6					# size (number of digits) of each worker Pi buffer
 OVERLAPING = 35						# size of overlaping between Pi buffers
 MAX_WORKERS = mp.cpu_count()-1		# max ammount of concurrent workers

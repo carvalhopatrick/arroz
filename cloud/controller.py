@@ -59,7 +59,7 @@ def main():
 			utils.json_write(data, utils.DATAFILE)
 			
 			# delete txt file
-			# os.remove(input_file) #### TODO: reabilitar
+			os.remove(input_file) 
 
 			log(f"{file_number}:\tFinished search in {input_file} in {time.time() - start_time}s")
 		except:

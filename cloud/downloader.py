@@ -66,11 +66,11 @@ def main():
 				filename = ycd_list[0]
 				log(f"Starting extraction of {filename}\t{datetime.now()}", file_number)
 				start_time = time.time()
-				r = extract_ycd(f"./input/{filename}", file_number)
+				r = extract_ycd(f"./{filename}", file_number)
 
 				if (r):
-					log(f"Extracted in {time.time() - start_time}s", file_number)
-					# os.remove(f'./input/{filename}') ### TODO: reabilitar
+                                       log(f"Extracted in {time.time() - start_time}s", file_number)
+                                       os.remove(f'./input/{filename}') 
 				else:
 					raise Exception("ERROR: extract_ycd")
 
