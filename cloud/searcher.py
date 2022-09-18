@@ -8,7 +8,7 @@ BUFSIZE = 100*10**6					# size (number of digits) of each worker Pi buffer
 OVERLAPING = 35						# size of overlaping between Pi buffers
 MAX_WORKERS = mp.cpu_count()-1		# max ammount of concurrent workers
 MAX_PROCS = 2*MAX_WORKERS			# max ammount of prepared processes in pool (a high amount will waste RAM)
-OUTPUT_FILE = "./logs/test.log"		# path to output log (with results)
+OUTPUT_FILE = "./logs/searcher.log"		# path to output log (with results)
 PAL_FILE = "./palindromes/palindromes.log"	# path to palindromes file
 
 class Searcher:
