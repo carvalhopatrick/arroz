@@ -42,7 +42,7 @@ def main():
 			log(f"{file_number}:\tStarting search in {input_file}\t{datetime.now()}")
 			start_time = time.time()
 			# warn if pitxt filename differs from expected, for any reason
-			if (input_file != f"pi{file_number}.pitxt"):
+			if (input_file != f"./input/pi{file_number}.pitxt"):
 					log(f"{file_number}:\tWARNING: pitxt filename is wrong. Expected: pi{file_number}.pitxt - continuing anyway...")
 
 			# parameters >> start(input_file, file_number, start_idx, end_idx, previous):
