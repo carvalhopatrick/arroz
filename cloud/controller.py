@@ -67,6 +67,8 @@ def main():
 			data['file_number'] = file_number_bak
 			data['last_digits'] = last_digits_bak
 			utils.json_write(data, utils.DATAFILE)
+			time.sleep(2)
+			continue
 
 
 if __name__ == '__main__':
