@@ -6,7 +6,6 @@ import shutil
 import utils
 from datetime import datetime
 
-# TODO: colocar blocos try-except
 # TODO: api para informar erros/webserver
 
 LOGFILE = "./logs/control.log"
