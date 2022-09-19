@@ -1,4 +1,3 @@
-from distutils.log import error
 import os, time, subprocess
 import glob
 import searcher
