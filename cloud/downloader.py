@@ -22,7 +22,7 @@ def download_ycd(file_number):
 			os.rename(f'./input/pi{file_number}.ycd.part', f'./input/pi{file_number}.ycd')
 		return True
 	except:
-		log("ERROR: download_ycd", file_number)
+		log(f"ERROR: download_ycd {file_number}", file_number)
 		return False
 
 def extract_ycd(filename, file_number):
@@ -38,7 +38,7 @@ def extract_ycd(filename, file_number):
 		os.rename(f'{txt_name}', f'{txt_name.replace(".txt", ".pitxt")}')
 		return True
 	except:
-		log("ERROR: extract_ycd", filename)
+		log(f"ERROR: extract_ycd {filename}", file_number)
 		return False
 
 def main():
@@ -86,7 +86,7 @@ def main():
 					r = download_ycd(next_download)
 					
 					if (r): # file finished downloading
-						log(f"Downloaded in {time.time() - start_time}s", file_number)
+						log(f"Downloaded {next_download} in {time.time() - start_time}s", next_download)
 						next_download += 1
 						download_data['next_download'] = next_download
 						utils.json_write(download_data, utils.DOWNLOAD_DATA)
@@ -104,7 +104,7 @@ def main():
 				r = extract_ycd(f"{filename}", next_extract)
 
 				if (r):
-					log(f"Extracted in {time.time() - start_time}s", file_number)
+					log(f"Extracted {filename} in {time.time() - start_time}s", next_extract)
 					next_extract += 1
 					download_data['next_extract'] = next_extract
 					utils.json_write(download_data, utils.DOWNLOAD_DATA)
@@ -119,7 +119,7 @@ def main():
 		except:
 			data['next_download'] = int(next_download_bak)
 			data['next_extract'] = int(next_extract_bak)
-			log('ERROR: downloader loop!', file_number)
+			log('ERROR: downloader loop!', -1)
 			time.sleep(2)
 			continue
 
