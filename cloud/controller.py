@@ -19,7 +19,11 @@ def main():
 	log("Starting Downloader...\n")
 	downloader_p = subprocess.Popen(["python3", "downloader.py"])
 
-	file_number = 0
+	data = utils.json_read(utils.DATAFILE)
+	file_number_bak = data['file_number']
+	last_digits_bak = data['last_digits']
+	file_number = file_number_bak
+	last_digits = last_digits_bak
 
 	while(file_number <= 1000):
 		try:
@@ -63,7 +67,7 @@ def main():
 
 			log(f"{file_number}:\tFinished search in {input_file} in {time.time() - start_time}s")
 		except:
-			log(f'{file_number}:\ERROR: controller loop - resetting json to previous run')
+			log(f'{file_number}:\tERROR: controller loop - resetting json to previous run')
 			data['file_number'] = file_number_bak
 			data['last_digits'] = last_digits_bak
 			utils.json_write(data, utils.DATAFILE)

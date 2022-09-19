@@ -1,6 +1,7 @@
 import json
 
 DATAFILE = "./control_data.json"
+DOWNLOAD_DATA = "./download_data.json"
 
 def json_read(file):
 	with open(file, 'r') as jsonfile:
