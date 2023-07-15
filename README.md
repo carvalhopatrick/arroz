@@ -18,7 +18,7 @@ Much of the process generate logs so I could check if something went wrong while
 
 The searcher (cloud/searcher.py) code is multithreaded, but, being written in python, it's not the most optimized. It scans around 16 million digits per second with an i7-9750H CPU. During the challenge, I was planning on rewriting it in C++, but the biggest bottleneck was actually my internet speed (to download the digits), so it wasn't needed.
 
-In the end, me and a friend got together to use our free student credits in Google Cloud and rent some VMs to finish the search on time. The download speeds were much quicker on those.
+In the end, me and a friend ([tbochniak](https://github.com/tbochniak)) got together to use our free student credits in Google Cloud and rent some VMs to finish the search on time. The download speeds were much quicker on those.
 
 ## The result
 
