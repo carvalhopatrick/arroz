@@ -1,0 +1,12 @@
+601:	palindrome! size: 27 // center idx: 46217662758 // pal: 481045438753858357834540184
+	prime size: 23 // idx: 60146217662748 // pal: 10454387538583578345401
+	
+	
+330:	palindrome! size: 25 // center idx: 44988112971 // pal: 7331530558321238550351337
+	idx: 33044988112960
+	https://api.pi.delivery/v1/pi?start=33044988112960&numberOfDigits=25&radix=10
+
+
+331:	palindrome! size: 25 // center idx: 35773126769 // pal: 9609457639843489367549069
+	idx: 33135773126758
+	https://api.pi.delivery/v1/pi?start=33135773126758&numberOfDigits=25&radix=10

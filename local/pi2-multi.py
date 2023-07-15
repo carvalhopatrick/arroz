@@ -7,12 +7,12 @@ import multiprocessing as mp
 MINSIZE = 22						# minimum size of the palindromic prime to be searched
 BUFSIZE = 50*10**6					# size (number of digits) of each worker Pi buffer
 OVERLAPING = 35						# size of overlaping between Pi buffers
-MAX_WORKERS = 10					# max ammount of concurrent workers
+MAX_WORKERS = 10				# max ammount of concurrent workers
 MAX_PROCS = 2*MAX_WORKERS			# max ammount of prepared processes in pool (a high amount will waste RAM)
-START_IDX = 0				# min Pi digit index to search
-END_IDX = 1*10**9				# max Pi digit index to search (-1 to until end of file)
-INPUT_FILE = "D:/pi/pi_dec_1t_02.txt"				# path to input file with pi digits
-OUTPUT_FILE = "./local/outputs/test.log"		# path to output log (with results)
+START_IDX = 48099990950				# min Pi digit index to search
+END_IDX = 50999999950				# max Pi digit index to search (-1 to until end of file)
+INPUT_FILE = "D:/pi/pi17miss.txt"				# path to input file with pi digits
+OUTPUT_FILE = "./outputs/run17miss.log"		# path to output log (with results)
 
 # add last digits from previous file to concatenate with first digits of current run (leave '' for empty)
 PREVIOUS_DIGITS = ''
