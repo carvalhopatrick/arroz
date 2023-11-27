@@ -28,5 +28,4 @@ In the end, me and a friend ([tbochniak](https://github.com/tbochniak)) got toge
 
 - The biggest non-prime palindromes had 29 digits. 4 of them were found, one of them being **70421912916317671361921912407** at #**80830942786239**. ([Verify it](https://api.pi.delivery/v1/pi?start=80830942786239&numberOfDigits=29&radix=10))
 
-Having found the largest prime palindrome, I was one of the 26 people who got to the final stage, which had a different challenge. Unfortunately, I was not quick enough to be one of the 3 winners in that one.
-Having found the largest prime palindrome, I was one of the 26 people who got to the final stage, which had a different challenge. Unfortunately, I was not quick enough to be one of the 3 winners in that one.
+Having found the largest prime palindrome, we were two of the 26 people who got to the final stage, which had a different challenge. Unfortunately, We were not quick enough to be one of the 3 winners in that one.
